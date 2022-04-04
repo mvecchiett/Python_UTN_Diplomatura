@@ -5,22 +5,15 @@ import sqlite3
 import tkinter.ttk as ttk   
 import tkinter.messagebox as tkMessageBox
 import re
-from xml.dom.minidom import ReadOnlySequentialNamedNodeMap
+
 
 #https://docs.python.org/es/3/library/tkinter.html
-mensajes = []
-#************************************ FUNCION DE MENSAJES ************************************ 
-def leermensajes():
-    with open("datos.txt", "r") as tf:
-        lineas = tf.read().split(',')
-    return lineas
-#lo dejo solo para el titulo porque no funciono en otros elementos llamar a la funcion mensaje
-#Luego pensaba hacer una tabla de mensajes en la base de datos.. pero si no lee esto... mmmm
+
 #************************************ Tk OPCIONES PRINCIPALES ********************************  **** 
 #https://visualtk.com/
 root = Tk()
-mensajes=leermensajes()
-root.title(mensajes[0])
+
+root.title("Gestor de Usuarios")
 screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
 width = 900
@@ -198,7 +191,7 @@ Hombre = Radiobutton(RadioGroup, text='Hombre', variable=SEXO, value='Hombre', f
 Mujer =  Radiobutton(RadioGroup, text='Mujer', variable=SEXO, value='Mujer', font=('arial', 16)).pack(side=LEFT)
    
 #********************************ETIQUETAS********************************
-txt_titulo = Label(Frametitulo, width=900, font=('arial', 24), text = mensajes[0])
+txt_titulo = Label(Frametitulo, width=900, font=('arial', 24), text = "Gestor de Usuarios")
 txt_titulo.pack()
 txt_nombre = Label(Forms, text='Nombre', font=('arial', 16), bd=15)
 txt_nombre.grid(row=0, sticky="e")
